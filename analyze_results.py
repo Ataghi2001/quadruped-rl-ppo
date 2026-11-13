@@ -21,9 +21,7 @@ N_EPISODES = 20
 SEED = 2026
 
 
-# ==========================================
 # 1. Learning Curve
-# ==========================================
 
 def plot_learning_curve():
     if not EVAL_LOG.exists():
@@ -63,9 +61,7 @@ def plot_learning_curve():
     print("Saved: results/learning_curve.png")
 
 
-# ==========================================
 # 2. Evaluate an Agent
-# ==========================================
 
 def evaluate_agent(agent_name, model=None):
     env = gym.make("Ant-v5")
@@ -117,9 +113,7 @@ def evaluate_agent(agent_name, model=None):
     return rows
 
 
-# ==========================================
 # 3. Evaluation Comparison
-# ==========================================
 
 def compare_agents():
 
@@ -142,7 +136,6 @@ def compare_agents():
 
     all_rows = random_rows + ppo_rows
 
-    # Save raw episode measurements
     csv_path = RESULTS_DIR / "evaluation.csv"
 
     with csv_path.open("w", newline="") as file:

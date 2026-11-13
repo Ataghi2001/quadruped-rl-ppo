@@ -11,13 +11,10 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import (
     CallbackList,
     CheckpointCallback,
-    EvalCallback,
-)
+    EvalCallback, )
 
 
-# ============================================
 # 1. Configuration
-# ============================================
 
 ENV_ID = "Ant-v5"
 SEED = 42
@@ -32,9 +29,7 @@ BEST_MODEL = MODEL_DIR / "best_model.zip"
 LAST_MODEL = MODEL_DIR / "last_model.zip"
 
 
-# ============================================
 # 2. Create PPO Agent
-# ============================================
 
 def create_agent(env):
 
@@ -68,9 +63,7 @@ def create_agent(env):
     return model
 
 
-# ============================================
 # 3. Training
-# ============================================
 
 def train(total_steps, n_envs, resume=None):
 
@@ -80,7 +73,6 @@ def train(total_steps, n_envs, resume=None):
 
     print("\nCreating training environments...")
 
-    # Single-process vectorized environments
     train_env = make_vec_env(
         ENV_ID,
         n_envs=n_envs,
@@ -88,7 +80,6 @@ def train(total_steps, n_envs, resume=None):
         vec_env_cls=DummyVecEnv,
     )
 
-    # Separate environment for evaluation
     eval_env = make_vec_env(
         ENV_ID,
         n_envs=1,
@@ -113,7 +104,6 @@ def train(total_steps, n_envs, resume=None):
         else:
             model = create_agent(train_env)
 
-        # Save the best evaluation model
         eval_callback = EvalCallback(
             eval_env,
             best_model_save_path=str(MODEL_DIR),
@@ -124,7 +114,6 @@ def train(total_steps, n_envs, resume=None):
             verbose=1,
         )
 
-        # Save a checkpoint every 250k steps
         checkpoint_callback = CheckpointCallback(
             save_freq=max(250_000 // n_envs, 1),
             save_path=str(CHECKPOINT_DIR),
@@ -169,9 +158,7 @@ def train(total_steps, n_envs, resume=None):
         eval_env.close()
 
 
-# ============================================
 # 4. Watch the Robot
-# ============================================
 
 def watch(episodes=3, random_agent=False, model_path=None):
 
@@ -260,9 +247,7 @@ def watch(episodes=3, random_agent=False, model_path=None):
         env.close()
 
 
-# ============================================
 # 5. Command Line Interface
-# ============================================
 
 def main():
 
