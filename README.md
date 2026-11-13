@@ -7,6 +7,40 @@ Training a four-legged robot to walk using Deep Reinforcement Learning.
 
 ![Quadruped robot walking](assets/ant-walking.gif)
 
+
+## 📊 Training & Evaluation Results
+
+### PPO Learning Curve
+
+The following plot shows the mean evaluation reward
+over training timesteps. The shaded region represents
+the standard deviation across evaluation episodes.
+
+![PPO Learning Curve](results/learning_curve.png)
+
+### Random Agent vs Trained PPO
+
+Both agents are evaluated over 20 episodes using
+the same environment reset seeds.
+
+#### Episode Reward
+
+![Reward Comparison](results/reward_comparison.png)
+
+#### Forward Distance
+
+![Distance Comparison](results/distance_comparison.png)
+
+### Quantitative Evaluation
+
+See the [Evaluation Summary](results/evaluation_summary.md)
+for measured rewards, forward displacement,
+and episode lengths.
+
+Individual episode results are available in
+[evaluation.csv](results/evaluation.csv).
+
+
 ## Overview
 
 This project trains a quadruped robot from scratch using
