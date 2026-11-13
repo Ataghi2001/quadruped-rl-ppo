@@ -1,0 +1,28 @@
+
+# Virtual environments
+.venv/
+.venv-rl/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Training outputs
+models/
+runs/
+logs/
+*.tfevents.*
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
