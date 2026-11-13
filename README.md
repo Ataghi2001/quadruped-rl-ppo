@@ -1,10 +1,11 @@
-## 🎬 Demo — Trained PPO Agent
-
-![Quadruped robot walking](assets/ant-walking.gif)
 
 # 🐾 Quadruped Robot Learning with PPO
 
 Training a four-legged robot to walk using Deep Reinforcement Learning.
+
+## 🎬 Demo — Trained PPO Agent
+
+![Quadruped robot walking](assets/ant-walking.gif)
 
 ## Overview
 
