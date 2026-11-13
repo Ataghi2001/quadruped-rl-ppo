@@ -37,6 +37,24 @@ See the [Evaluation Summary](results/evaluation_summary.md)
 for measured rewards, forward displacement,
 and episode lengths.
 
+The trained PPO agent was evaluated against a random
+policy over 20 episodes using identical reset seeds.
+
+| Metric | Random Agent | Trained PPO |
+|---|---:|---:|
+| Mean Episode Reward | -25.79 ± 35.82 | **1206.82 ± 652.20** |
+| Mean Forward Distance | 0.21 ± 0.97 m | **44.23 ± 25.66 m** |
+| Mean Episode Length | 90.65 ± 77.25 | **715.15 ± 369.80** |
+
+Values represent mean ± sample standard deviation.
+
+**Key Finding:** PPO substantially outperformed the
+random baseline in this evaluation, demonstrating
+successful reward-driven locomotion learning.
+
+The trained agent achieved positive forward displacement
+in all 20 evaluation episodes.
+
 Individual episode results are available in
 [evaluation.csv](results/evaluation.csv).
 
