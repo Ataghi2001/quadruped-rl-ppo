@@ -1,3 +1,6 @@
+## 🎬 Demo — Trained PPO Agent
+
+![Quadruped robot walking](assets/ant-walking.gif)
 
 # 🐾 Quadruped Robot Learning with PPO
 
